@@ -7,14 +7,14 @@ RSpec.describe Team do
   end
 
   it 'exists' do
-    expect(@team). to be_an_instance_of(Team)
+    expect(@team).to be_an_instance_of(Team)
   end
 
   it 'has attributes' do
     expect(@team.country).to eq('France')
     expect(@team.eliminated?).to eq(false)
 
-    @team.eliminated
+    @team.eliminated = true
     expect(@team.eliminated?).to eq(true)
   end
 

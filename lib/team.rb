@@ -2,18 +2,16 @@ class Team
   attr_reader :country,
               :players
 
+  attr_accessor :eliminated
+
   def initialize(country)
     @country = country
-    @still_in = false
+    @eliminated = false
     @players = []
   end
 
   def eliminated?
-    @still_in
-  end
-
-  def eliminated
-    @still_in = true
+    @eliminated
   end
 
   def add_player(player)
@@ -23,6 +21,6 @@ class Team
   def players_by_position(position)
     @players.find_all do |player|
       player.position == position
-    end 
+    end
   end
 end
