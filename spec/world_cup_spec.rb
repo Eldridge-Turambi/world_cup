@@ -36,4 +36,15 @@ RSpec.describe WorldCup do
     @croatia.eliminated = true
     expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba])
   end
+
+  it '#all_players_by_position' do
+
+    expected = {
+    "forward" => [@mbappe],
+    "midfielder" => [@pogba, @modric],
+    "defender" => [@vida]
+  }
+
+    expect(@world_cup.all_players_by_position).to eq(expected)
+  end
 end
